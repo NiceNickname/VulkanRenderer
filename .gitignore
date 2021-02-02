@@ -1,0 +1,6 @@
+.vs/
+x64/
+vendor/
+*.sln
+*.vcxproj.*
+*.vcxproj
