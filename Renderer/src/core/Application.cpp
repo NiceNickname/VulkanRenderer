@@ -19,8 +19,8 @@ void App::loop()
 {
 	while (!window->shouldClose())
 	{
-		Renderer::draw();
 		window->update();
+		Renderer::draw();
 	}
 }
 
