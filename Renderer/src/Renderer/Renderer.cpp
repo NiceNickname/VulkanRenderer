@@ -89,6 +89,8 @@ void Renderer::draw()
 void Renderer::shutdown()
 {
 	vkDeviceWaitIdle(device);
+
+	
 	
 	for (size_t i = 0; i < maxFramesInFlight; i++)
 	{
@@ -575,6 +577,9 @@ void Renderer::createGraphicsPipeline()
 
 	if (vkCreateGraphicsPipelines(device, VK_NULL_HANDLE, 1, &pipelineInfo, nullptr, &graphicsPipeline) != VK_SUCCESS)
 		throw std::runtime_error("cannot create graphics pipeline");
+
+	vkDestroyShaderModule(device, vertexShaderModule, nullptr);
+	vkDestroyShaderModule(device, fragmentShaderModule, nullptr);
 
 }
 
